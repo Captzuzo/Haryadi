@@ -1,16 +1,52 @@
 # Haryadi Framework 🚀
 
+Belajar membuat sebuah Framework. masih banyak kekurangnya
 Sebuah CSS framework modern yang ringan dan mudah dikustomisasi untuk pengembangan web yang cepat dan responsif.
 
 ## ✨ Fitur Utama
 
 - 🎨 **Multiple Themes** - Support light, dark, dan custom themes
 - 📱 **Fully Responsive** - Mobile-first approach
-- 🎯 **Utility-First** - Kelas utilitas yang powerful
 - 🏗️ **Component-Based** - Komponen siap pakai
 - 🎨 **Customizable** - Mudah dikustomisasi dengan CSS variables
-- ⚡ **Lightweight** - Ringan dan performa tinggi
-- ♿ **Accessible** - Memenuhi standar aksesibilitas
+
+## Commands
+
+# 1. Command Migration
+
+```
+php haryadi make:migration create_users_tabel
+```
+
+# 2. Command Migrate
+
+```
+php haryadi migrate
+```
+
+# 3. Command Controller
+
+```
+php haryadi make:controller UserController
+```
+
+# 4. Command Model
+
+```
+php haryadi make:model User
+```
+
+# 5. Command Seeder
+
+```
+php haryadi make:Seeder UserSeeder
+```
+
+# 6. Command Serve
+
+```
+php haryadi serve
+```
 
 ## 🚀 Instalasi
 
@@ -135,10 +171,11 @@ Download file CSS dari releases page dan include di project Anda.
 
 ### Build Custom Version
 
-`git clone https://github.com/your-repo/haryadi-framework`
-`cd haryadi-framework`
-`npm install`
-`npm run build-custom`
+```git clone https://github.com/your-repo/haryadi-framework
+cd haryadi-framework
+npm install
+npm run build-custom
+```
 
 ### 👥 Tim Pengembang
 
@@ -154,7 +191,7 @@ Icons from Heroicons
 
 ### 📞 Support
 
-Jika Anda menemukan bug atau memiliki pertanyaan, silakan buat issue.
+Jika Anda menemukan bug atau memiliki pertanyaan.
 
 ````
 <div align="center">
