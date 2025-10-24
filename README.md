@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# <img src="/public//assets/images/haryadi/ht.png" alt="Haryadi Framework" width="40" height="40" /> Haryadi Framework 🚀
+# <img src="/public//assets/images/haryadi/ht.png" alt="Haryadi Framework" width="80" height="80" />
 
 **Belajar membuat sebuah Framework. Masih banyak kekurangannya**
 Sebuah CSS framework modern yang ringan dan mudah dikustomisasi untuk pengembangan web yang cepat dan responsif.
