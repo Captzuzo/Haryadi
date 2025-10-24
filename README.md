@@ -1,7 +1,17 @@
 # Haryadi Framework 🚀
 
-Belajar membuat sebuah Framework. masih banyak kekurangnya
+<div align="center">
+
+# <img src="/public//assets/images/haryadi/ht.png" alt="Haryadi Framework" width="40" height="40" /> Haryadi Framework 🚀
+
+**Belajar membuat sebuah Framework. Masih banyak kekurangannya**
 Sebuah CSS framework modern yang ringan dan mudah dikustomisasi untuk pengembangan web yang cepat dan responsif.
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![PHP](https://img.shields.io/badge/PHP-8.1%2B-777BB4.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+</div>
 
 ## ✨ Fitur Utama
 
@@ -9,6 +19,12 @@ Sebuah CSS framework modern yang ringan dan mudah dikustomisasi untuk pengembang
 - 📱 **Fully Responsive** - Mobile-first approach
 - 🏗️ **Component-Based** - Komponen siap pakai
 - 🎨 **Customizable** - Mudah dikustomisasi dengan CSS variables
+
+### Prerequisites
+
+- PHP 8.1 atau lebih tinggi
+- Composer
+- Web server (Apache/Nginx)
 
 ## Commands
 
@@ -48,6 +64,12 @@ php haryadi make:Seeder UserSeeder
 php haryadi serve
 ```
 
+# 7. Command Serve
+
+```
+php haryadi key:generate
+```
+
 ## 🚀 Instalasi
 
 ### Metode 1: CDN
@@ -73,6 +95,17 @@ php haryadi serve
 ### Metode 3: Download
 
 Download file CSS dari releases page dan include di project Anda.
+
+```bash
+# Clone repository
+git clone https://github.com/Captzuzo/Haryadi.git
+```
+
+#### Install dependencies
+
+```
+composer install
+```
 
 ## 🎨 Themes
 
