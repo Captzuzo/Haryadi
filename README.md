@@ -31,7 +31,7 @@ Sebuah CSS framework modern yang ringan dan mudah dikustomisasi untuk pengembang
 # 1. Command Migration
 
 ```
-php haryadi make:migration create_users_tabel
+php haryadi buat:migration create_users_tabel
 ```
 
 # 2. Command Migrate
@@ -43,31 +43,37 @@ php haryadi migrate
 # 3. Command Controller
 
 ```
-php haryadi make:controller UserController
+php haryadi buat:controller UserController
 ```
 
 # 4. Command Model
 
 ```
-php haryadi make:model User
+php haryadi buat:model User
 ```
 
 # 5. Command Seeder
 
 ```
-php haryadi make:Seeder UserSeeder
+php haryadi buat:Seeder UserSeeder
 ```
 
 # 6. Command Serve
 
 ```
-php haryadi serve
+php haryadi layanan
 ```
 
-# 7. Command Serve
+# 7. Command generate key
 
 ```
 php haryadi key:generate
+```
+
+# 7. Command Bantuan
+
+```
+php haryadi bantuan
 ```
 
 ## 🚀 Instalasi

@@ -1,0 +1,75 @@
+# =============================================
+# HARAYADI FRAMEWORK GITIGNORE
+# =============================================
+
+# ➤ DEPENDENCIES
+/vendor/          # Composer dependencies
+/node_modules/    # Node.js dependencies
+
+# ➤ ENVIRONMENT & CONFIGURATION
+.env              # Environment variables
+.env.*            # All environment files
+!.env.example     # Except example file
+/config/*.local.php
+
+# ➤ STORAGE & LOGS
+/storage/logs/*.log
+/storage/framework/cache/*
+/storage/framework/views/*
+/storage/debugbar/*
+
+# ➤ CACHE & TEMPORARY FILES
+/bootstrap/cache/*
+*.tmp
+*.temp
+.cache/
+
+# ➤ DEVELOPMENT & BUILD
+/.buildpath
+/.project
+/.settings/
+/nbproject/
+
+# ➤ IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ➤ OPERATING SYSTEM
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ➤ COMPOSER
+composer.phar
+/composer.lock    # Uncomment jika ingin commit lock file
+
+# ➤ DATABASE
+*.sqlite
+*.db
+/database/*.sqlite
+
+# ➤ BACKUP FILES
+*.backup
+*.bak
+*.old
+
+# ➤ LICENSE & SECURITY
+*.key
+*.pem
+*.crt
+*.licence
+*.license
+
+# ➤ TESTING
+/coverage/
+.phpunit.result.cache
+
+# ➤ UPLOADS (jika ada)
+/public/uploads/
+/storage/app/public/

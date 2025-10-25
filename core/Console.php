@@ -1,6 +1,8 @@
 <?php
 namespace Haryadi\Core;
-
+use App\Console\Command;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\PhpExecutableFinder;
 class Console
 {
     private $commands = [];
@@ -27,24 +29,24 @@ class Console
     private function registerCommands(): void
     {
         $this->commands = [
-            'serve' => [
+            'layanan' => [
                 'description' => 'Menjalankan development server',
-                'usage' => 'php haryadi serve [<host>] [<port>]',
+                'usage' => 'php haryadi layanan [<host>] [<port>]',
                 'handler' => 'serve'
             ],
-            'make:model' => [
+            'buat:model' => [
                 'description' => 'Membuat model baru',
-                'usage' => 'php haryadi make:model <nama_model>',
+                'usage' => 'php haryadi buat:model <nama_model>',
                 'handler' => 'makeModel'
             ],
-            'make:controller' => [
+            'buat:controller' => [
                 'description' => 'Membuat controller baru',
-                'usage' => 'php haryadi make:controller <nama_controller> [--api]',
+                'usage' => 'php haryadi buat:controller <nama_controller> [--api]',
                 'handler' => 'makeController'
             ],
-            'make:migration' => [
+            'buat:migration' => [
                 'description' => 'Membuat file migration',
-                'usage' => 'php haryadi make:migration <nama_migration>',
+                'usage' => 'php haryadi buat:migration <nama_migration>',
                 'handler' => 'makeMigration'
             ],
             'migrate' => [
@@ -52,9 +54,9 @@ class Console
                 'usage' => 'php haryadi migrate [--fresh]',
                 'handler' => 'migrate'
             ],
-            'make:seeder' => [
+            'buat:seeder' => [
                 'description' => 'Membuat file seeder baru',
-                'usage' => 'php haryadi make:seeder <nama_seeder>',
+                'usage' => 'php haryadi buat:seeder <nama_seeder>',
                 'handler' => 'makeSeeder'
             ],
             'migrate:fresh' => [
@@ -67,9 +69,9 @@ class Console
                 'usage' => 'php haryadi db:seed [<seeder_name>] [--class=ClassName]',
                 'handler' => 'runSeeder'
             ],
-            'make:middleware' => [
+            'buat:middleware' => [
                 'description' => 'Membuat middleware baru',
-                'usage' => 'php haryadi make:middleware <nama_middleware>',
+                'usage' => 'php haryadi buat:middleware <nama_middleware>',
                 'handler' => 'makeMiddleware'
             ],
             'route:list' => [
@@ -92,9 +94,9 @@ class Console
                 'usage' => 'php haryadi clear:cache',
                 'handler' => 'clearCache'
             ],
-            'help' => [
+            'bantuan' => [
                 'description' => 'Menampilkan bantuan',
-                'usage' => 'php haryadi help [<command>]',
+                'usage' => 'php haryadi bantuan [ <command>]',
                 'handler' => 'showHelp'
             ]
         ];
@@ -120,12 +122,24 @@ class Console
         $host = $args[0] ?? 'localhost';
         $port = $args[1] ?? '8000';
 
-        $this->info("🚀 Menjalankan Haryadi Framework development server...");
-        $this->info("📡 Server berjalan di: http://{$host}:{$port}");
-        $this->info("⏹️  Tekan Ctrl+C untuk menghentikan server");
+        $this->line("".'
 
-        passthru("php -S {$host}:{$port} -t public");
+    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    ▓                                                                            ▓       
+    ▓                          🚀 HARYADI FRAMEWORK                              ▓          
+    ▓                      LAYANAN PENGEMBANGAN DIMULAI                          ▓
+    ▓                                                                            ▓
+    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+        ');
+
+        $this->info("🚀 Menjalankan Haryadi Framework development layanan...");
+        $this->info("📡 Layanan berjalan di: http://{$host}:{$port}");
+        $this->info("⏹️  Tekan Ctrl+C untuk menghentikan layanan");
+        
+        
     }
+
+    
 
     private function makeModel(array $args): void
     {
@@ -488,7 +502,7 @@ class Console
         $this->info("");
 
         foreach ($this->commands as $cmd => $info) {
-            $this->line("  {$this->colors['green']}{$cmd}{$this->colors['reset']}");
+            $this->line("  php haryadi {$this->colors['green']}{$cmd}{$this->colors['reset']}");
             $this->line("      {$info['description']}");
             $this->line("");
         }

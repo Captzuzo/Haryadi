@@ -4,6 +4,11 @@ use Haryadi\Core\Session;
 use App\Middleware\AuthMiddleware;
 use App\Controllers\AuthController;
 
+
+Router::get('/', function($request) {
+    view('welcome');
+}, 'home');
+
 // ==================== AUTH ROUTES ====================
 // Route untuk halaman login (GET)
 Router::get('/login', function() {
@@ -77,7 +82,7 @@ Router::get('/dashboard', ['AuthController@dashboard'], 'dashboard');
 
 
 // ==================== HOME ROUTES ====================
-Router::get('/', ['HomeController@index'], 'home');
+Router::get('/', ['HomeController@index'], 'index');
 Router::get('/about', ['HomeController@about'], 'about');
 
 // ==================== PROTECTED ROUTES EXAMPLE ====================

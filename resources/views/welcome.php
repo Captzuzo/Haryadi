@@ -18,8 +18,13 @@
     </div>
 
     <!-- Environment Badge -->
-    <div class="env-badge">
-        <?= strtoupper(env('APP_ENV', 'local')) ?> Environment
+    <div class="env-badge" id="envBadge">
+        <?php echo strtoupper(env('APP_ENV', 'local')); ?> Environment
+    </div>
+
+    <!-- Login Badge -->
+    <div class="login-badge">
+        <a href="/login" class="login-link">Login</a>
     </div>
 
     <div class="container">
@@ -196,7 +201,7 @@
             <div class="footer-links">
                 <a href="/docs">Dokumentasi</a>
                 <a href="/api/health">API</a>
-                <a href="https://github.com/yourusername/haryadi-framework">GitHub</a>
+                <a href="https://github.com/Captzuzo/haryadi">GitHub</a>
                 <a href="/license">Lisensi</a>
             </div>
             <div class="copyright">
