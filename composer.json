@@ -1,0 +1,34 @@
+{
+  "name": "haryadi/framework",
+  "description": "Haryadi PHP MVC Framework",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "phpoption/phpoption": "^1.9",
+    "illuminate/support": "^10.0",
+    "illuminate/database": "^10.0",
+    "illuminate/events": "^10.0",
+    "vlucas/phpdotenv": "^5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Haryadi\\Core\\": "core/",
+      "App\\": "app/"
+    },
+    "files": [
+      "core/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
