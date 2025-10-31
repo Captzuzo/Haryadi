@@ -1,0 +1,36 @@
+{
+  "name": "haryadi/haryadi-framework",
+  "description": "A lightweight PHP MVC framework inspired by Haryadi",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Haryadi",
+      "email": "deniagus679@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.0",
+    "vlucas/phpdotenv": "^5.5",
+    "symfony/var-dumper": "^6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Haryadi\\": "src/Haryadi/",
+      "App\\": "app/"
+    },
+    "files": [
+      "src/Haryadi/Helper/functions.php"
+    ]
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}
