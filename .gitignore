@@ -1,0 +1,34 @@
+# Composer vendor
+/vendor/
+
+# Composer lock (optional untuk library/framework)
+composer.lock
+
+# IDE files
+/.idea/
+/.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+/.env
+/.env.*
+/.env.local
+.env.backup
+
+# Logs
+/storage/logs/
+*.log
+
+# Cache
+/storage/cache/
+bootstrap/cache/
+
+# Node (kalau nanti pakai)
+node_modules/
+
+# Generated binaries
+*.phar
