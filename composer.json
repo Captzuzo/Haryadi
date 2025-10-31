@@ -1,8 +1,19 @@
 {
   "name": "haryadi/haryadi",
   "description": "Haryadi Framework - a MVC micro-framework",
-  "type": "library",
+  "type": "project",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Deni Agus Haryadi",
+      "email": "deni@example.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "vlucas/phpdotenv": "^5.5",
+    "symfony/var-dumper": "^6.3"
+  },
   "autoload": {
     "psr-4": {
       "Haryadi\\": "src/Haryadi/",
@@ -12,18 +23,18 @@
   "bin": [
     "bin/haryadi"
   ],
-  "require": {
-    "php": ">=8.1",
-    "vlucas/phpdotenv": "^5.5",
-    "symfony/var-dumper": "^6.3",
-    "haryadi/haryadi": "dev-main"
+  "scripts": {
+    "post-create-project-cmd": [
+      "if [ ! -f .env ]; then cp .env.example .env; fi",
+      "echo 'Haryadi project created successfully!'"
+    ]
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "vcs",
       "url": "https://github.com/Captzuzo/haryadi"
     }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  ]
 }
