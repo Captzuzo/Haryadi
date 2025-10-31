@@ -1,0 +1,64 @@
+#!/usr/bin/env php
+<?php
+// Simple CLI to generate controllers and models
+$argv0 = $argv[0] ?? 'haryadi';
+array_shift($argv);
+
+function base_path() {
+    return dirname(__DIR__);
+}
+
+$command = $argv[0] ?? null;
+
+if (!$command) {
+    echo "Haryadi CLI\n";
+    echo "Usage:\n";
+    echo "  php haryadi buat:controller Name\n";
+    echo "  php haryadi buat:model Name\n";
+    exit(0);
+}
+
+if ($command === 'buat:controller') {
+    $name = $argv[1] ?? null;
+    if (!$name) {
+        echo "Controller name required\n";
+        exit(1);
+    }
+
+    $dir = base_path() . '/app/Controllers';
+    if (!is_dir($dir)) mkdir($dir, 0777, true);
+    $file = $dir . '/' . $name . '.php';
+    if (file_exists($file)) {
+        echo "Controller already exists: $file\n";
+        exit(1);
+    }
+
+    $content = "<?php\nnamespace App\\Controllers;\n\nuse Haryadi\\Controller\\Controller;\nuse Haryadi\\Http\\Request;\n\nclass $name extends Controller\n{\n    public function index(Request \$request)\n    {\n        return \response($this->view('home', ['name' => '$name']));\n    }\n}\n";
+    file_put_contents($file, $content);
+    echo "Created controller: $file\n";
+    exit(0);
+}
+
+if ($command === 'buat:model') {
+    $name = $argv[1] ?? null;
+    if (!$name) {
+        echo "Model name required\n";
+        exit(1);
+    }
+
+    $dir = base_path() . '/app/Models';
+    if (!is_dir($dir)) mkdir($dir, 0777, true);
+    $file = $dir . '/' . $name . '.php';
+    if (file_exists($file)) {
+        echo "Model already exists: $file\n";
+        exit(1);
+    }
+
+    $content = "<?php\nnamespace App\\Models;\n\nuse Haryadi\\Models\\Model;\n\nclass $name extends Model\n{\n    protected static \$table = '" . strtolower($name) . "s';\n}\n";
+    file_put_contents($file, $content);
+    echo "Created model: $file\n";
+    exit(0);
+}
+
+echo "Unknown command: $command\n";
+exit(1);

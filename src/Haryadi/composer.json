@@ -1,0 +1,13 @@
+{
+  "name": "haryadi/haryadi",
+  "description": "Haryadi framework package",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Haryadi\\": ""
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

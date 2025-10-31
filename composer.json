@@ -1,0 +1,21 @@
+{
+  "name": "haryadi/haryadi",
+  "description": "Haryadi Framework - a MVC micro-framework",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "bin": [
+    "bin/haryadi"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "vlucas/phpdotenv": "^5.5",
+    "haryadi/haryadi": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
