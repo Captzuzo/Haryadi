@@ -5,6 +5,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
+      "Haryadi\\": "src/Haryadi/",
       "App\\": "app/"
     }
   },
@@ -12,10 +13,17 @@
     "bin/haryadi"
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.1",
     "vlucas/phpdotenv": "^5.5",
-    "haryadi/haryadi": "*"
+    "symfony/var-dumper": "^6.3",
+    "haryadi/haryadi": "dev-main"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Captzuzo/haryadi"
+    }
+  ],
   "minimum-stability": "dev",
   "prefer-stable": true
 }
